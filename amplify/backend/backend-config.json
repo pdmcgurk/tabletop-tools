@@ -5,5 +5,23 @@
       "type": "cicd",
       "lastPushTimeStamp": "2021-06-11T16:44:28.904Z"
     }
+  },
+  "api": {
+    "tttapi": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 365,
+              "description": "main"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        }
+      }
+    }
   }
 }
