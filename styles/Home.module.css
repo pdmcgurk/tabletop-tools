@@ -10,7 +10,7 @@
   white-space: nowrap;
   font-size: 400px;
 
-  color:#ee47d2;
+  color: var(--pink);
   text-shadow: #000 1px 1px 0;
   box-sizing: border-box;
 
@@ -45,4 +45,31 @@
   0% { text-indent: 100vw }
   100% { text-indent: -3500px }
 
+}
+
+.authDialog[data-reach-dialog-content] {
+  margin: 0 auto;
+  background: none;
+}
+
+.authDialog auth-container {
+  align-items: initial;
+}
+
+.authDialog amplify-sign-in {
+  position: relative;
+}
+
+.authDialog amplify-sign-up {
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: none;
+  border: none;
+  font-weight: 700;
+  font-size: 1.5rem;
 }

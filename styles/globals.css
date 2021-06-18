@@ -1,3 +1,10 @@
+:root {
+  --pink: #ee47d2;
+  --amplify-primary-color: var(--pink);
+  --amplify-primary-tint: var(--pink);
+  --amplify-primary-shade: var(--pink);
+}
+
 html,
 body {
   padding: 0;
