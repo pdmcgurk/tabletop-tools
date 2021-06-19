@@ -1,20 +1,75 @@
-type Blog @model {
+enum CharacterClass {
+  ARTIFICER
+  BARBARIAN
+  BARD
+  CLERIC
+  DRUID
+  FIGHTER
+  MONK
+  PALADIN
+  RANGER
+  ROGUE
+  SORCERER
+  WARLOCK
+  WIZARD
+}
+
+enum Ability {
+  STRENGTH
+  CONSTITUTION
+  DEXTERITY
+  INTELLIGENCE
+  WISDOM
+  CHARISMA
+}
+
+enum Skill {
+  ACROBATICS
+  ANIMAL_HANDLING
+  ARCANA
+  ATHLETICS
+  DECEPTION
+  HISTORY
+  INSIGHT
+  INTIMIDATION
+  INVESTIGATION
+  MEDICINE
+  NATURE
+  PERCEPTION
+  PERFORMANCE
+  PERSUASION
+  RELIGION
+  SLEIGHT_OF_HAND
+  STEALTH
+  SURVIVAL
+}
+
+type PlayerCharacter @model
+  @auth(rules: [{ allow: owner }])
+  @key(name: "pcsByParty", fields: ["partyID"]) {
+  id: ID!
+  partyID: ID!
+  party: Party! @connection(fields: ["partyID"])
+  name: String!
+  levels: Int
+  classes: [CharacterClass]
+  strength: Int
+  constitution: Int
+  dexterity: Int
+  intelligence: Int
+  wisdom: Int
+  charisma: Int
+  maxHP: Int
+  armor_class: Int
+  initiative: Int
+  save_profs: [Ability]
+  skill_profs: [Skill]
+  skill_exps: [Skill]
+}
+
+type Party @model
+  @auth(rules: [{ allow: owner }]) {
   id: ID!
   name: String!
-  posts: [Post] @connection(keyName: "byBlog", fields: ["id"])
-}
-
-type Post @model @key(name: "byBlog", fields: ["blogID"]) {
-  id: ID!
-  title: String!
-  blogID: ID!
-  blog: Blog @connection(fields: ["blogID"])
-  comments: [Comment] @connection(keyName: "byPost", fields: ["id"])
-}
-
-type Comment @model @key(name: "byPost", fields: ["postID", "content"]) {
-  id: ID!
-  postID: ID!
-  post: Post @connection(fields: ["postID"])
-  content: String!
+  characters: [PlayerCharacter] @connection(keyName: "pcsByParty", fields: ["id"])
 }

@@ -1,234 +1,219 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateBlog = /* GraphQL */ `
-  subscription OnCreateBlog {
-    onCreateBlog {
+export const onCreatePlayerCharacter = /* GraphQL */ `
+  subscription OnCreatePlayerCharacter($owner: String!) {
+    onCreatePlayerCharacter(owner: $owner) {
       id
-      name
-      posts {
-        items {
-          id
-          title
-          blogID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateBlog = /* GraphQL */ `
-  subscription OnUpdateBlog {
-    onUpdateBlog {
-      id
-      name
-      posts {
-        items {
-          id
-          title
-          blogID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteBlog = /* GraphQL */ `
-  subscription OnDeleteBlog {
-    onDeleteBlog {
-      id
-      name
-      posts {
-        items {
-          id
-          title
-          blogID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreatePost = /* GraphQL */ `
-  subscription OnCreatePost {
-    onCreatePost {
-      id
-      title
-      blogID
-      blog {
+      partyID
+      party {
         id
         name
-        posts {
+        characters {
           nextToken
         }
         createdAt
         updatedAt
+        owner
       }
-      comments {
-        items {
-          id
-          postID
-          content
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      name
+      levels
+      classes
+      strength
+      constitution
+      dexterity
+      intelligence
+      wisdom
+      charisma
+      maxHP
+      armor_class
+      initiative
+      save_profs
+      skill_profs
+      skill_exps
       createdAt
       updatedAt
+      owner
     }
   }
 `;
-export const onUpdatePost = /* GraphQL */ `
-  subscription OnUpdatePost {
-    onUpdatePost {
+export const onUpdatePlayerCharacter = /* GraphQL */ `
+  subscription OnUpdatePlayerCharacter($owner: String!) {
+    onUpdatePlayerCharacter(owner: $owner) {
       id
-      title
-      blogID
-      blog {
+      partyID
+      party {
         id
         name
-        posts {
+        characters {
           nextToken
         }
         createdAt
         updatedAt
+        owner
       }
-      comments {
-        items {
-          id
-          postID
-          content
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      name
+      levels
+      classes
+      strength
+      constitution
+      dexterity
+      intelligence
+      wisdom
+      charisma
+      maxHP
+      armor_class
+      initiative
+      save_profs
+      skill_profs
+      skill_exps
       createdAt
       updatedAt
+      owner
     }
   }
 `;
-export const onDeletePost = /* GraphQL */ `
-  subscription OnDeletePost {
-    onDeletePost {
+export const onDeletePlayerCharacter = /* GraphQL */ `
+  subscription OnDeletePlayerCharacter($owner: String!) {
+    onDeletePlayerCharacter(owner: $owner) {
       id
-      title
-      blogID
-      blog {
+      partyID
+      party {
         id
         name
-        posts {
+        characters {
           nextToken
         }
         createdAt
         updatedAt
+        owner
       }
-      comments {
+      name
+      levels
+      classes
+      strength
+      constitution
+      dexterity
+      intelligence
+      wisdom
+      charisma
+      maxHP
+      armor_class
+      initiative
+      save_profs
+      skill_profs
+      skill_exps
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const onCreateParty = /* GraphQL */ `
+  subscription OnCreateParty($owner: String!) {
+    onCreateParty(owner: $owner) {
+      id
+      name
+      characters {
         items {
           id
-          postID
-          content
+          partyID
+          name
+          levels
+          classes
+          strength
+          constitution
+          dexterity
+          intelligence
+          wisdom
+          charisma
+          maxHP
+          armor_class
+          initiative
+          save_profs
+          skill_profs
+          skill_exps
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
-export const onCreateComment = /* GraphQL */ `
-  subscription OnCreateComment {
-    onCreateComment {
+export const onUpdateParty = /* GraphQL */ `
+  subscription OnUpdateParty($owner: String!) {
+    onUpdateParty(owner: $owner) {
       id
-      postID
-      post {
-        id
-        title
-        blogID
-        blog {
+      name
+      characters {
+        items {
           id
+          partyID
           name
+          levels
+          classes
+          strength
+          constitution
+          dexterity
+          intelligence
+          wisdom
+          charisma
+          maxHP
+          armor_class
+          initiative
+          save_profs
+          skill_profs
+          skill_exps
           createdAt
           updatedAt
+          owner
         }
-        comments {
-          nextToken
-        }
-        createdAt
-        updatedAt
+        nextToken
       }
-      content
       createdAt
       updatedAt
+      owner
     }
   }
 `;
-export const onUpdateComment = /* GraphQL */ `
-  subscription OnUpdateComment {
-    onUpdateComment {
+export const onDeleteParty = /* GraphQL */ `
+  subscription OnDeleteParty($owner: String!) {
+    onDeleteParty(owner: $owner) {
       id
-      postID
-      post {
-        id
-        title
-        blogID
-        blog {
+      name
+      characters {
+        items {
           id
+          partyID
           name
+          levels
+          classes
+          strength
+          constitution
+          dexterity
+          intelligence
+          wisdom
+          charisma
+          maxHP
+          armor_class
+          initiative
+          save_profs
+          skill_profs
+          skill_exps
           createdAt
           updatedAt
+          owner
         }
-        comments {
-          nextToken
-        }
-        createdAt
-        updatedAt
+        nextToken
       }
-      content
       createdAt
       updatedAt
-    }
-  }
-`;
-export const onDeleteComment = /* GraphQL */ `
-  subscription OnDeleteComment {
-    onDeleteComment {
-      id
-      postID
-      post {
-        id
-        title
-        blogID
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        comments {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      content
-      createdAt
-      updatedAt
+      owner
     }
   }
 `;

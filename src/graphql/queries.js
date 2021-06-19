@@ -1,150 +1,138 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getBlog = /* GraphQL */ `
-  query GetBlog($id: ID!) {
-    getBlog(id: $id) {
+export const getPlayerCharacter = /* GraphQL */ `
+  query GetPlayerCharacter($id: ID!) {
+    getPlayerCharacter(id: $id) {
+      id
+      partyID
+      party {
+        id
+        name
+        characters {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      name
+      levels
+      classes
+      strength
+      constitution
+      dexterity
+      intelligence
+      wisdom
+      charisma
+      maxHP
+      armor_class
+      initiative
+      save_profs
+      skill_profs
+      skill_exps
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const listPlayerCharacters = /* GraphQL */ `
+  query ListPlayerCharacters(
+    $filter: ModelPlayerCharacterFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listPlayerCharacters(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        partyID
+        party {
+          id
+          name
+          createdAt
+          updatedAt
+          owner
+        }
+        name
+        levels
+        classes
+        strength
+        constitution
+        dexterity
+        intelligence
+        wisdom
+        charisma
+        maxHP
+        armor_class
+        initiative
+        save_profs
+        skill_profs
+        skill_exps
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+`;
+export const getParty = /* GraphQL */ `
+  query GetParty($id: ID!) {
+    getParty(id: $id) {
       id
       name
-      posts {
+      characters {
         items {
           id
-          title
-          blogID
+          partyID
+          name
+          levels
+          classes
+          strength
+          constitution
+          dexterity
+          intelligence
+          wisdom
+          charisma
+          maxHP
+          armor_class
+          initiative
+          save_profs
+          skill_profs
+          skill_exps
           createdAt
           updatedAt
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
-export const listBlogs = /* GraphQL */ `
-  query ListBlogs(
-    $filter: ModelBlogFilterInput
+export const listPartys = /* GraphQL */ `
+  query ListPartys(
+    $filter: ModelPartyFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listBlogs(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listPartys(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         name
-        posts {
+        characters {
           nextToken
         }
         createdAt
         updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const getPost = /* GraphQL */ `
-  query GetPost($id: ID!) {
-    getPost(id: $id) {
-      id
-      title
-      blogID
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      comments {
-        items {
-          id
-          postID
-          content
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listPosts = /* GraphQL */ `
-  query ListPosts(
-    $filter: ModelPostFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listPosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        title
-        blogID
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        comments {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const getComment = /* GraphQL */ `
-  query GetComment($id: ID!) {
-    getComment(id: $id) {
-      id
-      postID
-      post {
-        id
-        title
-        blogID
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        comments {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      content
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listComments = /* GraphQL */ `
-  query ListComments(
-    $filter: ModelCommentFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listComments(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        postID
-        post {
-          id
-          title
-          blogID
-          createdAt
-          updatedAt
-        }
-        content
-        createdAt
-        updatedAt
+        owner
       }
       nextToken
     }
